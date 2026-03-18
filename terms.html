@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wonder Walk Terms of Use</title>
+  <style>
+    :root {
+      --bg: #f6f4f5;
+      --surface: #ffffff;
+      --text: #1f1f24;
+      --muted: #6f7280;
+      --line: #ece8ee;
+      --pink: #ff4f7d;
+      --pink-dark: #f53d73;
+      --purple: #b64ef4;
+      --shadow: 0 18px 50px rgba(182, 78, 244, 0.12);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(182, 78, 244, 0.10), transparent 25%),
+        radial-gradient(circle at top left, rgba(255, 79, 125, 0.10), transparent 22%),
+        var(--bg);
+      line-height: 1.65;
+    }
+
+    .wrap {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero { padding: 48px 0 24px; }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(255,79,125,0.98) 0%, rgba(202,77,230,0.96) 58%, rgba(157,79,245,0.96) 100%);
+      border-radius: 36px;
+      color: white;
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card::before,
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+    }
+
+    .hero-card::before {
+      width: 260px;
+      height: 260px;
+      top: -110px;
+      right: -60px;
+    }
+
+    .hero-card::after {
+      width: 180px;
+      height: 180px;
+      left: -40px;
+      bottom: -60px;
+    }
+
+    .brand-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.18);
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      backdrop-filter: blur(8px);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle {
+      margin: 8px 0 0;
+      max-width: 720px;
+      color: rgba(255,255,255,0.92);
+      font-size: 1.02rem;
+    }
+
+    .updated {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.22);
+      font-weight: 600;
+      white-space: nowrap;
+      backdrop-filter: blur(8px);
+    }
+
+    .mini-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 26px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 22px;
+      padding: 16px 18px;
+      backdrop-filter: blur(8px);
+    }
+
+    .stat-label {
+      display: block;
+      font-size: 0.86rem;
+      color: rgba(255,255,255,0.84);
+      margin-bottom: 6px;
+    }
+
+    .stat strong {
+      font-size: 1.02rem;
+      font-weight: 700;
+    }
+
+    .content { padding: 24px 0 60px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .toc,
+    .panel,
+    .contact-card {
+      background: rgba(255,255,255,0.88);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      box-shadow: 0 10px 28px rgba(39, 27, 68, 0.05);
+      backdrop-filter: blur(8px);
+    }
+
+    .toc {
+      position: sticky;
+      top: 20px;
+      padding: 22px;
+    }
+
+    .toc h2,
+    .panel h2,
+    .contact-card h2 {
+      margin: 0 0 14px;
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .toc a {
+      display: block;
+      padding: 10px 12px;
+      margin: 6px 0;
+      text-decoration: none;
+      color: var(--text);
+      border-radius: 14px;
+      transition: 0.2s ease;
+      font-size: 0.96rem;
+    }
+
+    .toc a:hover {
+      background: #fff1f5;
+      color: var(--pink-dark);
+      transform: translateX(2px);
+    }
+
+    .main {
+      display: grid;
+      gap: 18px;
+    }
+
+    .intro-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      padding: 26px;
+      box-shadow: 0 10px 28px rgba(39, 27, 68, 0.05);
+    }
+
+    .intro-card p { margin: 0; color: var(--muted); font-size: 1.02rem; }
+
+    .panel { padding: 26px; }
+
+    .section-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      margin-right: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ffd6e2, #f2d5ff);
+      color: var(--pink-dark);
+      font-weight: 800;
+      font-size: 0.95rem;
+      vertical-align: middle;
+    }
+
+    p, li { color: #444853; }
+    ul { margin: 10px 0 0 20px; padding: 0; }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .pill {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #fff3f7;
+      color: var(--pink-dark);
+      border: 1px solid #ffd5e2;
+      font-weight: 600;
+      font-size: 0.93rem;
+    }
+
+    .callout {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(255,79,125,0.08), rgba(182,78,244,0.10));
+      border: 1px solid rgba(255,79,125,0.12);
+    }
+
+    .contact-card {
+      padding: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,247,251,0.96));
+    }
+
+    .email-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 16px;
+      background: white;
+      border: 1px solid var(--line);
+      color: var(--pink-dark);
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+
+    footer {
+      padding: 0 0 42px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+      .toc { position: static; }
+      .mini-stats { grid-template-columns: 1fr; }
+      .brand-row { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 560px) {
+      .hero-card, .intro-card, .panel, .toc, .contact-card { border-radius: 24px; }
+      .hero-card, .intro-card, .panel, .contact-card { padding: 22px; }
+      .wrap { width: min(100% - 18px, 1100px); }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-card">
+        <div class="brand-row">
+          <div>
+            <div class="brand">
+              <div class="logo">🚶</div>
+              <div>
+                <h1>Terms of Use</h1>
+                <p class="subtitle">The terms that apply when you use the Wonder Walk iPhone app.</p>
+              </div>
+            </div>
+          </div>
+          <div class="updated">Last Updated: [Insert Date]</div>
+        </div>
+
+        <div class="mini-stats" aria-hidden="true">
+          <div class="stat">
+            <span class="stat-label">App</span>
+            <strong>Wonder Walk</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Platform</span>
+            <strong>iOS</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Access</span>
+            <strong>No account required</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="content">
+    <div class="wrap grid">
+      <aside class="toc">
+        <h2>On this page</h2>
+        <a href="#intro">Overview</a>
+        <a href="#use-of-app">1. Use of the App</a>
+        <a href="#no-account">2. No Account Required</a>
+        <a href="#health-disclaimer">3. Health Disclaimer</a>
+        <a href="#healthkit">4. HealthKit Integration</a>
+        <a href="#subscriptions">5. Subscriptions and Payments</a>
+        <a href="#intellectual-property">6. Intellectual Property</a>
+        <a href="#liability">7. Limitation of Liability</a>
+        <a href="#termination">8. Termination</a>
+        <a href="#changes">9. Changes to These Terms</a>
+        <a href="#governing-law">10. Governing Law</a>
+        <a href="#contact">11. Contact Us</a>
+      </aside>
+
+      <section class="main">
+        <div class="intro-card" id="intro">
+          <p>
+            Welcome to Wonder Walk. These Terms of Use (“Terms”) govern your use of the Wonder Walk mobile application (the “App”).
+            By downloading, accessing, or using the App, you agree to be bound by these Terms. If you do not agree, please do not use the App.
+          </p>
+        </div>
+
+        <article class="panel" id="use-of-app">
+          <h2><span class="section-num">1</span>Use of the App</h2>
+          <p>Wonder Walk is a fitness application designed to help users track walking activity and improve general fitness.</p>
+          <p>You agree to use the App only for lawful purposes and in accordance with these Terms. You must not:</p>
+          <div class="pill-list">
+            <span class="pill">Use the App in any way that violates applicable laws</span>
+            <span class="pill">Attempt to interfere with or disrupt the App</span>
+            <span class="pill">Copy, modify, or distribute any part of the App without permission</span>
+          </div>
+        </article>
+
+        <article class="panel" id="no-account">
+          <h2><span class="section-num">2</span>No Account Required</h2>
+          <p>Wonder Walk does not require account registration. All data is stored locally on your device unless otherwise stated.</p>
+        </article>
+
+        <article class="panel" id="health-disclaimer">
+          <h2><span class="section-num">3</span>Health Disclaimer</h2>
+          <p>Wonder Walk provides fitness and wellness information for general informational purposes only.</p>
+          <div class="callout">
+            The App is not a medical device and does not provide medical advice. You should consult a qualified healthcare professional before starting any fitness program.
+            Use of the App is at your own risk.
+          </div>
+        </article>
+
+        <article class="panel" id="healthkit">
+          <h2><span class="section-num">4</span>HealthKit Integration</h2>
+          <p>The App may integrate with Apple HealthKit to read health and activity data.</p>
+          <p>This data is used only to provide app functionality and is not used for advertising or marketing purposes.</p>
+        </article>
+
+        <article class="panel" id="subscriptions">
+          <h2><span class="section-num">5</span>Subscriptions and Payments</h2>
+          <p>Wonder Walk offers optional paid subscriptions through Apple’s App Store.</p>
+          <ul>
+            <li>Payment will be charged to your Apple ID account at confirmation of purchase</li>
+            <li>Subscriptions automatically renew unless canceled at least 24 hours before the end of the current period</li>
+            <li>You can manage or cancel your subscription in your Apple ID account settings</li>
+          </ul>
+          <p>We do not control billing and do not issue refunds directly. All payments are handled by Apple.</p>
+        </article>
+
+        <article class="panel" id="intellectual-property">
+          <h2><span class="section-num">6</span>Intellectual Property</h2>
+          <p>All content, features, and functionality of the App, including design, text, graphics, and software, are owned by Wonder Walk and are protected by intellectual property laws.</p>
+          <p>You are granted a limited, non-exclusive, non-transferable license to use the App for personal, non-commercial use only.</p>
+        </article>
+
+        <article class="panel" id="liability">
+          <h2><span class="section-num">7</span>Limitation of Liability</h2>
+          <p>To the maximum extent permitted by law, Wonder Walk shall not be liable for:</p>
+          <ul>
+            <li>Any indirect, incidental, or consequential damages</li>
+            <li>Loss of data, health outcomes, or fitness results</li>
+            <li>Any issues arising from use of the App</li>
+          </ul>
+          <p>Your use of the App is at your own risk.</p>
+        </article>
+
+        <article class="panel" id="termination">
+          <h2><span class="section-num">8</span>Termination</h2>
+          <p>We may suspend or terminate your access to the App at any time, without prior notice, if you violate these Terms.</p>
+        </article>
+
+        <article class="panel" id="changes">
+          <h2><span class="section-num">9</span>Changes to These Terms</h2>
+          <p>We may update these Terms from time to time. Continued use of the App after changes means you accept the updated Terms.</p>
+        </article>
+
+        <article class="panel" id="governing-law">
+          <h2><span class="section-num">10</span>Governing Law</h2>
+          <p>These Terms shall be governed by and interpreted in accordance with applicable laws.</p>
+        </article>
+
+        <article class="contact-card" id="contact">
+          <h2><span class="section-num">11</span>Contact Us</h2>
+          <p>If you have any questions about these Terms, please contact us at:</p>
+          <a class="email-box" href="mailto:support@wonderwalk.app">support@wonderwalk.app</a>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    Wonder Walk Terms of Use
+  </footer>
+</body>
+</html>

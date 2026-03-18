@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wonder Walk Privacy Policy</title>
+  <style>
+    :root {
+      --bg: #f6f4f5;
+      --surface: #ffffff;
+      --text: #1f1f24;
+      --muted: #6f7280;
+      --line: #ece8ee;
+      --pink: #ff4f7d;
+      --pink-dark: #f53d73;
+      --purple: #b64ef4;
+      --shadow: 0 18px 50px rgba(182, 78, 244, 0.12);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(182, 78, 244, 0.10), transparent 25%),
+        radial-gradient(circle at top left, rgba(255, 79, 125, 0.10), transparent 22%),
+        var(--bg);
+      line-height: 1.65;
+    }
+
+    .wrap {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero { padding: 48px 0 24px; }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(255,79,125,0.98) 0%, rgba(202,77,230,0.96) 58%, rgba(157,79,245,0.96) 100%);
+      border-radius: 36px;
+      color: white;
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card::before,
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+    }
+
+    .hero-card::before {
+      width: 260px;
+      height: 260px;
+      top: -110px;
+      right: -60px;
+    }
+
+    .hero-card::after {
+      width: 180px;
+      height: 180px;
+      left: -40px;
+      bottom: -60px;
+    }
+
+    .brand-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.18);
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      backdrop-filter: blur(8px);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle {
+      margin: 8px 0 0;
+      max-width: 720px;
+      color: rgba(255,255,255,0.92);
+      font-size: 1.02rem;
+    }
+
+    .updated {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.22);
+      font-weight: 600;
+      white-space: nowrap;
+      backdrop-filter: blur(8px);
+    }
+
+    .mini-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 26px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 22px;
+      padding: 16px 18px;
+      backdrop-filter: blur(8px);
+    }
+
+    .stat-label {
+      display: block;
+      font-size: 0.86rem;
+      color: rgba(255,255,255,0.84);
+      margin-bottom: 6px;
+    }
+
+    .stat strong {
+      font-size: 1.02rem;
+      font-weight: 700;
+    }
+
+    .content { padding: 24px 0 60px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .toc,
+    .panel,
+    .contact-card {
+      background: rgba(255,255,255,0.88);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      box-shadow: 0 10px 28px rgba(39, 27, 68, 0.05);
+      backdrop-filter: blur(8px);
+    }
+
+    .toc {
+      position: sticky;
+      top: 20px;
+      padding: 22px;
+    }
+
+    .toc h2,
+    .panel h2,
+    .contact-card h2 {
+      margin: 0 0 14px;
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .toc a {
+      display: block;
+      padding: 10px 12px;
+      margin: 6px 0;
+      text-decoration: none;
+      color: var(--text);
+      border-radius: 14px;
+      transition: 0.2s ease;
+      font-size: 0.96rem;
+    }
+
+    .toc a:hover {
+      background: #fff1f5;
+      color: var(--pink-dark);
+      transform: translateX(2px);
+    }
+
+    .main {
+      display: grid;
+      gap: 18px;
+    }
+
+    .intro-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      padding: 26px;
+      box-shadow: 0 10px 28px rgba(39, 27, 68, 0.05);
+    }
+
+    .intro-card p { margin: 0; color: var(--muted); font-size: 1.02rem; }
+
+    .panel { padding: 26px; }
+
+    .section-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      margin-right: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ffd6e2, #f2d5ff);
+      color: var(--pink-dark);
+      font-weight: 800;
+      font-size: 0.95rem;
+      vertical-align: middle;
+    }
+
+    .subcard-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .subcard {
+      background: linear-gradient(180deg, #ffffff 0%, #fff8fb 100%);
+      border: 1px solid #f2e5ec;
+      border-radius: var(--radius-lg);
+      padding: 18px;
+    }
+
+    .subcard h3 {
+      margin: 0 0 10px;
+      font-size: 1rem;
+      color: var(--pink-dark);
+    }
+
+    p, li { color: #444853; }
+    ul { margin: 10px 0 0 20px; padding: 0; }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .pill {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #fff3f7;
+      color: var(--pink-dark);
+      border: 1px solid #ffd5e2;
+      font-weight: 600;
+      font-size: 0.93rem;
+    }
+
+    .callout {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(255,79,125,0.08), rgba(182,78,244,0.10));
+      border: 1px solid rgba(255,79,125,0.12);
+    }
+
+    .contact-card {
+      padding: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,247,251,0.96));
+    }
+
+    .email-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 16px;
+      background: white;
+      border: 1px solid var(--line);
+      color: var(--pink-dark);
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+
+    footer {
+      padding: 0 0 42px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+      .toc { position: static; }
+      .subcard-row, .mini-stats { grid-template-columns: 1fr; }
+      .brand-row { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 560px) {
+      .hero-card, .intro-card, .panel, .toc, .contact-card { border-radius: 24px; }
+      .hero-card, .intro-card, .panel, .contact-card { padding: 22px; }
+      .wrap { width: min(100% - 18px, 1100px); }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-card">
+        <div class="brand-row">
+          <div>
+            <div class="brand">
+              <div class="logo">👣</div>
+              <div>
+                <h1>Privacy Policy</h1>
+                <p class="subtitle">Simple, clear privacy information for Wonder Walk users on iPhone.</p>
+              </div>
+            </div>
+          </div>
+          <div class="updated">Last Updated: [Insert Date]</div>
+        </div>
+
+        <div class="mini-stats" aria-hidden="true">
+          <div class="stat">
+            <span class="stat-label">App</span>
+            <strong>Wonder Walk</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Platform</span>
+            <strong>iOS</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Audience</span>
+            <strong>13+</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="content">
+    <div class="wrap grid">
+      <aside class="toc">
+        <h2>On this page</h2>
+        <a href="#intro">Overview</a>
+        <a href="#info-we-collect">1. Information We Collect</a>
+        <a href="#how-we-use">2. How We Use Your Information</a>
+        <a href="#data-sharing">3. Data Sharing</a>
+        <a href="#subscriptions">4. Subscriptions and Payments</a>
+        <a href="#retention">5. Data Retention</a>
+        <a href="#choices">6. Your Privacy Choices</a>
+        <a href="#children">7. Children’s Privacy</a>
+        <a href="#security">8. Security</a>
+        <a href="#changes">9. Changes to This Policy</a>
+        <a href="#contact">10. Contact Us</a>
+      </aside>
+
+      <section class="main">
+        <div class="intro-card" id="intro">
+          <p>
+            Wonder Walk (“we”, “our”, or “us”) respects your privacy and is committed to protecting your personal information.
+            This Privacy Policy explains how Wonder Walk collects, uses, and protects your information when you use our iOS application.
+          </p>
+        </div>
+
+        <article class="panel" id="info-we-collect">
+          <h2><span class="section-num">1</span>Information We Collect</h2>
+          <p>We collect only the minimum information necessary to provide and improve the app.</p>
+
+          <div class="subcard-row">
+            <section class="subcard">
+              <h3>a) Personal Information</h3>
+              <ul>
+                <li>Name (provided during onboarding)</li>
+              </ul>
+              <p>We do not require account creation and do not collect email addresses or other personal identifiers.</p>
+            </section>
+
+            <section class="subcard">
+              <h3>b) Health and Fitness Data</h3>
+              <ul>
+                <li>Step count</li>
+                <li>Walking activity data</li>
+              </ul>
+              <p>With your permission, Wonder Walk may access health-related data from Apple HealthKit. This data is used solely to provide core app functionality, such as tracking your walking activity.</p>
+              <p>We do not use HealthKit data for advertising, marketing, or data mining purposes.</p>
+            </section>
+
+            <section class="subcard">
+              <h3>c) Location Data</h3>
+              <p>With your permission, Wonder Walk collects your location data while you are actively using the app.</p>
+              <ul>
+                <li>Track your walking routes</li>
+                <li>Display your movement on the map using Apple Maps</li>
+              </ul>
+              <p>We do not collect location data in the background.</p>
+            </section>
+          </div>
+        </article>
+
+        <article class="panel" id="how-we-use">
+          <h2><span class="section-num">2</span>How We Use Your Information</h2>
+          <p>We use collected data to:</p>
+          <div class="pill-list">
+            <span class="pill">Provide and maintain app functionality</span>
+            <span class="pill">Track walking activity and progress</span>
+            <span class="pill">Improve app performance and user experience</span>
+          </div>
+          <div class="callout">We do not use your data for advertising or marketing.</div>
+        </article>
+
+        <article class="panel" id="data-sharing">
+          <h2><span class="section-num">3</span>Data Sharing</h2>
+          <p>We do not sell, rent, or share your personal data with third parties.</p>
+        </article>
+
+        <article class="panel" id="subscriptions">
+          <h2><span class="section-num">4</span>Subscriptions and Payments</h2>
+          <p>Wonder Walk offers in-app subscriptions processed through Apple’s App Store.</p>
+          <p>We do not collect or store your payment information. All billing is handled securely by Apple.</p>
+        </article>
+
+        <article class="panel" id="retention">
+          <h2><span class="section-num">5</span>Data Retention</h2>
+          <p>We retain your data only for as long as necessary to provide app functionality and comply with legal obligations.</p>
+        </article>
+
+        <article class="panel" id="choices">
+          <h2><span class="section-num">6</span>Your Privacy Choices</h2>
+          <p>You can control your data through your device settings:</p>
+          <ul>
+            <li><strong>Health Data:</strong> Manage access via Apple Health settings</li>
+            <li><strong>Location Data:</strong> Enable or disable location access in iOS Settings</li>
+          </ul>
+        </article>
+
+        <article class="panel" id="children">
+          <h2><span class="section-num">7</span>Children’s Privacy</h2>
+          <p>Wonder Walk is intended for users aged 13 and older. We do not knowingly collect personal information from children under 13.</p>
+        </article>
+
+        <article class="panel" id="security">
+          <h2><span class="section-num">8</span>Security</h2>
+          <p>We take reasonable measures to protect your information, but no method of transmission or storage is completely secure.</p>
+        </article>
+
+        <article class="panel" id="changes">
+          <h2><span class="section-num">9</span>Changes to This Policy</h2>
+          <p>We may update this Privacy Policy from time to time. Any changes will be reflected with an updated “Last Updated” date.</p>
+        </article>
+
+        <article class="contact-card" id="contact">
+          <h2><span class="section-num">10</span>Contact Us</h2>
+          <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+          <a class="email-box" href="mailto:support@wonderwalk.app">support@wonderwalk.app</a>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    Wonder Walk Privacy Policy
+  </footer>
+</body>
+</html>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wonder Walk Subscription Terms</title>
+  <style>
+    :root {
+      --bg: #f6f4f5;
+      --surface: #ffffff;
+      --text: #1f1f24;
+      --muted: #6f7280;
+      --line: #ece8ee;
+      --pink: #ff4f7d;
+      --pink-dark: #f53d73;
+      --purple: #b64ef4;
+      --shadow: 0 18px 50px rgba(182, 78, 244, 0.12);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(182, 78, 244, 0.10), transparent 25%),
+        radial-gradient(circle at top left, rgba(255, 79, 125, 0.10), transparent 22%),
+        var(--bg);
+      line-height: 1.65;
+    }
+
+    .wrap {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero { padding: 48px 0 24px; }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(255,79,125,0.98) 0%, rgba(202,77,230,0.96) 58%, rgba(157,79,245,0.96) 100%);
+      border-radius: 36px;
+      color: white;
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card::before,
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+    }
+
+    .hero-card::before {
+      width: 260px;
+      height: 260px;
+      top: -110px;
+      right: -60px;
+    }
+
+    .hero-card::after {
+      width: 180px;
+      height: 180px;
+      left: -40px;
+      bottom: -60px;
+    }
+
+    .brand-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.18);
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      backdrop-filter: blur(8px);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle {
+      margin: 8px 0 0;
+      max-width: 720px;
+      color: rgba(255,255,255,0.92);
+      font-size: 1.02rem;
+    }
+
+    .updated {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.22);
+      font-weight: 600;
+      white-space: nowrap;
+      backdrop-filter: blur(8px);
+    }
+
+    .mini-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 26px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 22px;
+      padding: 16px 18px;
+      backdrop-filter: blur(8px);
+    }
+
+    .stat-label {
+      display: block;
+      font-size: 0.86rem;
+      color: rgba(255,255,255,0.84);
+      margin-bottom: 6px;
+    }
+
+    .stat strong {
+      font-size: 1.02rem;
+      font-weight: 700;
+    }
+
+    .content { padding: 24px 0 60px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .toc,
+    .panel,
+    .contact-card {
+      background: rgba(255,255,255,0.88);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      box-shadow: 0 10px 28px rgba(39, 27, 68, 0.05);
+      backdrop-filter: blur(8px);
+    }
+
+    .toc {
+      position: sticky;
+      top: 20px;
+      padding: 22px;
+    }
+
+    .toc h2,
+    .panel h2,
+    .contact-card h2 {
+      margin: 0 0 14px;
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .toc a {
+      display: block;
+      padding: 10px 12px;
+      margin: 6px 0;
+      text-decoration: none;
+      color: var(--text);
+      border-radius: 14px;
+      transition: 0.2s ease;
+      font-size: 0.96rem;
+    }
+
+    .toc a:hover {
+      background: #fff1f5;
+      color: var(--pink-dark);
+      transform: translateX(2px);
+    }
+
+    .main {
+      display: grid;
+      gap: 18px;
+    }
+
+    .intro-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      padding: 26px;
+      box-shadow: 0 10px 28px rgba(39, 27, 68, 0.05);
+    }
+
+    .intro-card p { margin: 0; color: var(--muted); font-size: 1.02rem; }
+
+    .panel { padding: 26px; }
+
+    .section-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      margin-right: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ffd6e2, #f2d5ff);
+      color: var(--pink-dark);
+      font-weight: 800;
+      font-size: 0.95rem;
+      vertical-align: middle;
+    }
+
+    p, li { color: #444853; }
+    ul { margin: 10px 0 0 20px; padding: 0; }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .pill {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #fff3f7;
+      color: var(--pink-dark);
+      border: 1px solid #ffd5e2;
+      font-weight: 600;
+      font-size: 0.93rem;
+    }
+
+    .contact-card {
+      padding: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,247,251,0.96));
+    }
+
+    .email-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 16px;
+      background: white;
+      border: 1px solid var(--line);
+      color: var(--pink-dark);
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+
+    footer {
+      padding: 0 0 42px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+      .toc { position: static; }
+      .mini-stats { grid-template-columns: 1fr; }
+      .brand-row { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 560px) {
+      .hero-card, .intro-card, .panel, .toc, .contact-card { border-radius: 24px; }
+      .hero-card, .intro-card, .panel, .contact-card { padding: 22px; }
+      .wrap { width: min(100% - 18px, 1100px); }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-card">
+        <div class="brand-row">
+          <div>
+            <div class="brand">
+              <div class="logo">💳</div>
+              <div>
+                <h1>Subscription Terms</h1>
+                <p class="subtitle">Details about billing, renewals, and subscriptions in Wonder Walk.</p>
+              </div>
+            </div>
+          </div>
+          <div class="updated">Last Updated: [Insert Date]</div>
+        </div>
+
+        <div class="mini-stats">
+          <div class="stat">
+            <span class="stat-label">Billing</span>
+            <strong>Apple App Store</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Renewal</span>
+            <strong>Auto-renew</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Control</span>
+            <strong>Apple ID Settings</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="content">
+    <div class="wrap grid">
+      <aside class="toc">
+        <h2>On this page</h2>
+        <a href="#intro">Overview</a>
+        <a href="#overview">1. Subscription Overview</a>
+        <a href="#payment">2. Payment</a>
+        <a href="#renewal">3. Auto-Renewal</a>
+        <a href="#trial">4. Free Trials</a>
+        <a href="#cancellation">5. Cancellation</a>
+        <a href="#refunds">6. Refunds</a>
+        <a href="#pricing">7. Price Changes</a>
+        <a href="#access">8. Access and Features</a>
+        <a href="#changes">9. Changes</a>
+        <a href="#contact">10. Contact</a>
+      </aside>
+
+      <section class="main">
+        <div class="intro-card" id="intro">
+          <p>
+            These Subscription Terms govern the paid features of the Wonder Walk mobile application (the “App”).
+            By purchasing a subscription, you agree to these Subscription Terms.
+          </p>
+        </div>
+
+        <article class="panel" id="overview">
+          <h2><span class="section-num">1</span>Subscription Overview</h2>
+          <p>Wonder Walk offers optional paid subscriptions that provide access to premium features.</p>
+          <p>Subscription options, pricing, and duration will be displayed in the App at the time of purchase.</p>
+        </article>
+
+        <article class="panel" id="payment">
+          <h2><span class="section-num">2</span>Payment</h2>
+          <ul>
+            <li>Payment will be charged to your Apple ID account at the time of purchase</li>
+            <li>All payments are processed by Apple through the App Store</li>
+            <li>We do not collect or store your payment information</li>
+          </ul>
+        </article>
+
+        <article class="panel" id="renewal">
+          <h2><span class="section-num">3</span>Auto-Renewal</h2>
+          <ul>
+            <li>Subscriptions automatically renew unless canceled</li>
+            <li>Your account will be charged within 24 hours before the end of the current billing period</li>
+            <li>The renewal will be at the same price and duration as your original subscription</li>
+          </ul>
+        </article>
+
+        <article class="panel" id="trial">
+          <h2><span class="section-num">4</span>Free Trials (if offered)</h2>
+          <ul>
+            <li>It will automatically convert into a paid subscription unless canceled before the trial ends</li>
+            <li>You will be charged at the end of the trial period if not canceled</li>
+          </ul>
+        </article>
+
+        <article class="panel" id="cancellation">
+          <h2><span class="section-num">5</span>Cancellation</h2>
+          <ul>
+            <li>You can cancel your subscription at any time through your Apple ID account settings</li>
+            <li>Cancellation must be made at least 24 hours before the end of the current billing period</li>
+            <li>Deleting the App does not cancel your subscription</li>
+          </ul>
+          <p><strong>After cancellation:</strong></p>
+          <ul>
+            <li>Your subscription remains active until the end of the current billing period</li>
+            <li>You will not be charged for the next period</li>
+          </ul>
+        </article>
+
+        <article class="panel" id="refunds">
+          <h2><span class="section-num">6</span>Refunds</h2>
+          <p>All purchases are handled by Apple.</p>
+          <ul>
+            <li>We do not issue refunds directly</li>
+            <li>Refund requests must be submitted to Apple via the App Store</li>
+            <li>Refund eligibility is determined by Apple’s policies</li>
+          </ul>
+        </article>
+
+        <article class="panel" id="pricing">
+          <h2><span class="section-num">7</span>Price Changes</h2>
+          <p>We may change subscription prices from time to time.</p>
+          <p>Any price changes will take effect at the next billing cycle.</p>
+        </article>
+
+        <article class="panel" id="access">
+          <h2><span class="section-num">8</span>Access and Features</h2>
+          <p>Access to premium features is available only during an active subscription period.</p>
+          <p>If your subscription expires or is canceled, access to premium features will be removed.</p>
+        </article>
+
+        <article class="panel" id="changes">
+          <h2><span class="section-num">9</span>Changes to Subscription Terms</h2>
+          <p>We may update these Subscription Terms from time to time. Continued use means you accept updates.</p>
+        </article>
+
+        <article class="contact-card" id="contact">
+          <h2><span class="section-num">10</span>Contact Us</h2>
+          <p>If you have any questions about subscriptions, please contact us at:</p>
+          <a class="email-box" href="mailto:support@wonderwalk.app">support@wonderwalk.app</a>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    Wonder Walk Subscription Terms
+  </footer>
+</body>
+</html>
